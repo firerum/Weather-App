@@ -1,4 +1,5 @@
 const btn = document.getElementById("btn");
+const inputValue = document.getElementById("city");
 
 function getWeather() {
    const city = document.getElementById("city").value; // User Input
@@ -24,19 +25,19 @@ function getWeather() {
       .then(data => {
           //Extract each data and put them in the DOM
           temp.textContent = Math.round(data["main"]["temp"] - 273);
-          pressure.innerHTML += `<span>${Math.round(data["main"]["pressure"])}hpa</span> `;
-          feelsLike.innerHTML += `<span>${Math.round(data["main"]["feels_like"] - 273)}&#176;C</span>`;
-          wind.innerHTML += `<span>${Math.round(data["wind"]["speed"])}km/hr</span>`;
-          humidity.innerHTML += `<span>${data["main"]["humidity"]}%</span>`;
+          pressure.innerHTML = `Pressure: <span>${Math.round(data["main"]["pressure"])}hpa</span> `;
+          feelsLike.innerHTML = `Feels Like: <span>${Math.round(data["main"]["feels_like"] - 273)}&#176;C</span>`;
+          wind.innerHTML = `Wind: <span>${Math.round(data["wind"]["speed"])}km/hr</span>`;
+          humidity.innerHTML = `Humidity: <span>${data["main"]["humidity"]}%</span>`;
           country.textContent = data["sys"]["country"];
           cityName.textContent = `${data["name"]},`;
           description.textContent = data["weather"][0]["description"];
-       console.log(data);
       })
-      .catch(err => {
-          errorMessage.textContent = `Data not found ${err.message}`;
-   })
 }
 
 // Add event listener to the button
 btn.addEventListener("click", getWeather);
+inputValue.addEventListener("keypress", e => {
+        if(e.keyCode == 13) 
+           getWeather(); 
+    });
