@@ -1,6 +1,7 @@
 :root {
    --pry-radius: 3px;
    --pry-padding: 2em 1em;
+   --neg-margin: -1em;
 }
 
 * {
@@ -12,11 +13,6 @@
 body {
    font-family: "Kumbh Sans", sans-serif;
    color: #F2F2F2;
-/*
-   height: 100vh;
-   display: flex;
-   flex-direction: column;
-*/
 }
 
 input[type="text"]#city {
@@ -24,7 +20,8 @@ input[type="text"]#city {
    -webkit-appearance: none;
    width: 100%;
    font-family: inherit;
-   padding: 1em;
+   font-size: 1.5rem;
+   padding: 0.3em;
    margin-bottom: 1rem;
    border: none;
    border-bottom: 1px solid #1f1f1f;
@@ -47,10 +44,11 @@ ul {
 button {
    border: none;
    font-family: inherit;
+   font-weight: 700;
    padding: 0.8em;
    border-radius: var(--pry-radius);
-   box-shadow:  inset 3px 4px 4px 0 rgba(0, 0, 0, .45),
-               inset -3px -1px 4px 0 rgba(169, 169, 169, .1);
+   box-shadow:   3px 4px 4px 0 rgba(0, 0, 0, .45),
+                -3px -1px 4px 0 rgba(169, 169, 169, .1);
    background-color: transparent;
    color: #F2F2F2;
    letter-spacing: 2px;
@@ -111,7 +109,7 @@ main.weather {
 
 .weather > .display {
    color: #F2F2F2;
-   margin: 0 -1em;
+   margin: 0 var(--neg-margin);
 }
 
 .weather .weather-desc {
@@ -140,7 +138,14 @@ main.weather {
     margin-bottom: 1.3rem;
 }
 
+.weather > .display p > .deg{
+    font-size: 1.5rem;
+}
 
+.weather > .details-list {
+    margin: 0 var(--neg-margin);
+    
+}
 .weather .details {
     padding: 3em 1em;
     display: grid;
@@ -166,6 +171,7 @@ footer {
     padding: 2em 1em;
     margin-top: auto;
     background-color: #131836;
+    text-align: center;
 }
 
 
@@ -199,7 +205,6 @@ footer {
     .weather > .display {
         grid-column: 1;
         justify-self: flex-start;
-        outline: 1px solid #fff;
     }
     
     .weather > .search-box {
