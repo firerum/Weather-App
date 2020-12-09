@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="keywords" content="weather app, html, css, JavaScript, web development">
+      <meta name="description" content="A simple weather app to get user's current weather">
+      <meta name="author" content="Ademuyiwa Adewuyi, Firerum, Codesader">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="style.css" type="text/css">
+      <title>Weather App</title>
+   </head>
+
+   <body>
+      <div class="container">
+         <header class="banner">
+            <div class="banner-title">
+               <h1>Weather App</h1>
+               <p>Never Get Stranded</p> 
+          </div>
+          <p class="current-date">Wednesday, <br>December 9, 2020</p>
+         </header>
+         
+         <main class="weather">
+            <section class="search-box">
+               <input type="text" name="" id="city" placeholder="enter city">
+               <button type="submit" id="btn">Search</button>
+            </section>
+            <section class="display">
+               <p><span class="city">Ibadan,</span><span  class="country">NG</span></p>
+               <div class="weather-desc">
+                  <img src="images/cloud-computing.svg" class="icon" alt="weather condition">
+                  <p class="description">Cloudy</p>
+               </div>
+               <p><span class="temp">40</span>&#176;C</p>
+               </section>
+               <section class="details-list">
+                   <ul class="details">
+                       <li class="humidity">Humidity: </li>
+                       <li class="pressure">Pressure: </li>
+                       <li class="feels-like">Feels Like: </li>
+                       <li class="wind">Wind Speed: </li>
+                   </ul>
+               </section>
+         </main>
+         
+         <footer>
+             <p>Codesader&copy;2020. All Rights Reserved.</p>
+         </footer>
+      </div>
+      <script src="main.js"></script>
+   </body>
+</html>
