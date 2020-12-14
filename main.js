@@ -11,13 +11,11 @@ function getWeather() {
    const description = document.querySelector(".description");
    const cityName = document.querySelector(".city");
    const country = document.querySelector(".country");
-   const icon = document.querySelector(".icon");
    const temp = document.querySelector(".temp");
    const humidity = document.querySelector(".humidity");
    const pressure = document.querySelector(".pressure");
    const feelsLike = document.querySelector(".feels-like");
    const wind = document.querySelector(".wind");
-   const errorMessage = document.createElement("p");
 
    // Fetch data from the OpenWeather API
    fetch(api)
@@ -32,10 +30,10 @@ function getWeather() {
           country.textContent = data["sys"]["country"];
           cityName.textContent = `${data["name"]},`;
           description.textContent = data["weather"][0]["description"];
-          const {id} = data["weather"][0];
+          //const {id} = data["weather"][0];
 
          // Display icon if it matches the weather id
-          if(id >= 200 && id < 290) {
+         /*  if(id >= 200 && id < 290) {
               icon.src = "http://openweathermap.org/img/wn/11d@2x.png";
           } else if(id >= 300 && id < 350) {
               icon.src = "http://openweathermap.org/img/wn/09d@2x.png";
@@ -55,9 +53,9 @@ function getWeather() {
               icon.src = "http://openweathermap.org/img/wn/3d@2x.png";
           } else if(id == 803 || id == 804) {
               icon.src = "http://openweathermap.org/img/wn/4d@2x.png";
-          }
-          console.log(id);
-          console.log(data);
+          } */
+          //console.log(id);
+          //console.log(data);
       });
 }
 
@@ -66,4 +64,18 @@ btn.addEventListener("click", getWeather);
 inputValue.addEventListener("keypress", e => {
         if(e.keyCode == 13) 
            getWeather(); 
-    });
+});
+
+
+// Show user's full date
+function userDate() {
+    const userCurrentDate = document.querySelector(".current-date");
+    // Make a new date object
+    const myDate = new Date();
+
+    // Put the date into the DOM
+    userCurrentDate.innerHTML = `<span>${myDate}</span>`;
+}
+
+userDate();
+

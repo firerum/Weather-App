@@ -62,7 +62,7 @@ button:hover {
 
 
       /* Header Styles */
-/* 
+
 .banner {
    background-image: url("images/weather-bg-mobile.jpg");
    background-repeat: no-repeat;
@@ -73,7 +73,6 @@ button:hover {
    color: #e0e0e0;
    display: flex;
    flex-direction: column;
-   display: none;
 }
 
 .banner h1 {
@@ -86,7 +85,7 @@ button:hover {
     font-size: 1.4rem;
     margin-top: 2rem;
     color: #F4D9D8;
-} */
+}
 
       /* Main Styles */
 
