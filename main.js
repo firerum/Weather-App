@@ -34,7 +34,7 @@ function getWeather() {
           description.textContent = data["weather"][0]["description"];
           const {id} = data.weather.id;
 
-          /* if(id >= 200 || id < 290) {
+          if(id >= 200 || id < 290) {
              icon.src = "http://openweathermap.org/img/wn/09d@2x.png";
           } else if(id >= 300 || id < 350) {
              icon.src = "http://openweathermap.org/img/wn/10d@2x.png";
@@ -48,7 +48,7 @@ function getWeather() {
              icon.src = "http://openweathermap.org/img/wn/01n@2x.png";
           } else if(id > 800 || id < 850) {
              icon.src = "http://openweathermap.org/img/wn/10d@2x.png";
-          } */
+          }
       });
 }
 
