@@ -32,7 +32,24 @@ function getWeather() {
           country.textContent = data["sys"]["country"];
           cityName.textContent = `${data["name"]},`;
           description.textContent = data["weather"][0]["description"];
-      })
+          const {id} = data.weather.id;
+
+          /* if(id >= 200 || id < 290) {
+             icon.src = "http://openweathermap.org/img/wn/09d@2x.png";
+          } else if(id >= 300 || id < 350) {
+             icon.src = "http://openweathermap.org/img/wn/10d@2x.png";
+          } else if(id >= 500 || id < 550) {
+             icon.src = "http://openweathermap.org/img/wn/11d@2x.png";
+          } else if(id >= 600 || id < 650) {
+             icon.src = "http://openweathermap.org/img/wn/13d@2x.png";
+          } else if(id >= 700 || id < 750) {
+             icon.src = "http://openweathermap.org/img/wn/50d@2x.png";
+          } else if(id == 800) {
+             icon.src = "http://openweathermap.org/img/wn/01n@2x.png";
+          } else if(id > 800 || id < 850) {
+             icon.src = "http://openweathermap.org/img/wn/10d@2x.png";
+          } */
+      });
 }
 
 // Add event listener to the button
