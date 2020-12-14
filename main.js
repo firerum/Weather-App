@@ -32,23 +32,32 @@ function getWeather() {
           country.textContent = data["sys"]["country"];
           cityName.textContent = `${data["name"]},`;
           description.textContent = data["weather"][0]["description"];
-          const {id} = data.weather.id;
+          const {id} = data["weather"][0];
 
-          if(id >= 200 || id < 290) {
-             icon.src = "http://openweathermap.org/img/wn/09d@2x.png";
-          } else if(id >= 300 || id < 350) {
-             icon.src = "http://openweathermap.org/img/wn/10d@2x.png";
-          } else if(id >= 500 || id < 550) {
-             icon.src = "http://openweathermap.org/img/wn/11d@2x.png";
-          } else if(id >= 600 || id < 650) {
-             icon.src = "http://openweathermap.org/img/wn/13d@2x.png";
-          } else if(id >= 700 || id < 750) {
-             icon.src = "http://openweathermap.org/img/wn/50d@2x.png";
+         // Display icon if it matches the weather id
+          if(id >= 200 && id < 290) {
+              icon.src = "http://openweathermap.org/img/wn/11d@2x.png";
+          } else if(id >= 300 && id < 350) {
+              icon.src = "http://openweathermap.org/img/wn/09d@2x.png";
+          } else if(id >= 500 && id < 505) {
+              icon.src = "http://openweathermap.org/img/wn/10d@2x.png";
+          } else if(id >= 506 && id < 532) {
+              icon.src = "http://openweathermap.org/img/wn/09d@2x.png";
+          } else if(id >= 600 && id < 650) {
+              icon.src = "http://openweathermap.org/img/wn/13d@2x.png";
+          } else if(id >= 700 && id < 750) {
+              icon.src = "http://openweathermap.org/img/wn/50d@2x.png";
           } else if(id == 800) {
-             icon.src = "http://openweathermap.org/img/wn/01n@2x.png";
-          } else if(id > 800 || id < 850) {
-             icon.src = "http://openweathermap.org/img/wn/10d@2x.png";
+              icon.src = "http://openweathermap.org/img/wn/01n@2x.png";
+          } else if(id == 801) {
+              icon.src = "http://openweathermap.org/img/wn/02d@2x.png";
+          } else if(id == 802) {
+              icon.src = "http://openweathermap.org/img/wn/3d@2x.png";
+          } else if(id == 803 || id == 804) {
+              icon.src = "http://openweathermap.org/img/wn/4d@2x.png";
           }
+          console.log(id);
+          console.log(data);
       });
 }
 
